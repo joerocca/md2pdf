@@ -3,4 +3,4 @@ Automation script that converts a directory of Markdown files to PDFs
 
 ## Dependencies
 - Pandoc
-- BasicTeX
+- TeX Live(Linux) or BasicTeX(macOS)
