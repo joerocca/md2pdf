@@ -25,7 +25,7 @@ for file in $notePath/*.md; do
 		baseFileNameExt=$(basename $file)
 		baseFileName=${baseFileNameExt%%.*}
 		
-		if [[ ! -f "$destPath/$baseFileNameExt" ]]; then
+		if [ ! -f "$destPath/$baseFileNameExt" ]; then
 			cp "$file" "$destPath/$baseFileNameExt" 
 		fi
 
