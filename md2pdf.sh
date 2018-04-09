@@ -1,8 +1,8 @@
 #!/bin/bash
 
-notePath="$HOME/Documents/Notes"
-hashFilePath="$notePath/.note_hashes" #must delete .note_hashes if changing destination path or else files will not be added to new destination
+sourcePath="$HOME/Documents/Notes"
 destPath="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Notes"
+hashFilePath="$sourcePath/.note_hashes" #must delete .note_hashes if changing destination path or else files will not be added to new destination
 numOfJobs=0
 
 declare -A hashes
@@ -10,7 +10,7 @@ if [ -f "$hashFilePath" ]; then
 	source $hashFilePath
 fi
 
-for file in $notePath/*.md; do
+for file in $sourcePath/*.md; do
 	newHash=$(shasum $file | awk '{print $1}')
 	oldHash=${hashes[$file]}
 	
