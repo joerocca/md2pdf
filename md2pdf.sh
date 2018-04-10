@@ -25,9 +25,7 @@ for file in $sourcePath/*.md; do
 		baseFileNameExt=$(basename $file)
 		baseFileName=${baseFileNameExt%%.*}
 		
-		if [ ! -f "$destPath/$baseFileNameExt" ]; then
-			cp "$file" "$destPath/$baseFileNameExt" 
-		fi
+		cp "$file" "$destPath/$baseFileNameExt" 
 
 		pandoc $file -s -o "$destPath/$baseFileName.pdf" &
 
